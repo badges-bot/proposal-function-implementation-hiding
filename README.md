@@ -1,5 +1,7 @@
 # Function implementation hiding proposal
 
+![Stage 2](https://badges.aleen42.com/src/tc39_3.svg)
+
 A proposal for a pair of new directives, tentatively `"sensitive"` and `"hide source"`, which provide a way for developers to indicate that certain implementation details should not be exposed to other user code. This has benefits for authors of library code who would like to refactor without fear of breaking consumers relying on their implementation details, authors of security-sensitive code, and authors of polyfills, among others.
 
 In practice, the `"hide source"` directive hides the source text revealed by `Function.prototype.toString` and the file attribution and position information revealed by `Error.prototype.stack`. The `"sensitive"` directive hides the source text revealed by `Function.prototype.toString` and omits the function entirely from `Error.prototype.stack`. The `"sensitive"` directive is intended to be expanded in the future as new security-impacting information leakages are discovered or added to the language.
